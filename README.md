@@ -30,3 +30,6 @@ Some properties are optional:
 - hieroglyphic encoding in Unicode: Hieroglyphic writing of the word form encoded with Unicode (only if the writing of the word form is complete!)
 - hieroglyphic inventar: inventar of the hieroglyphs used in the writing of the word form; encoded with Gardiner numbers
 Finally, there are some pos tags. Check the JSON schema for more details.
+
+## data transformation, schema
+by Simon D. Schweitzer, 2020-2021
