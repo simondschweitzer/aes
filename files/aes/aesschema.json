@@ -1,0 +1,155 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "object",
+	"title": "Schema for AED and AES",
+	"description": "used for the data structure of the projects \"Ancient Egyptian Dictionary\" and \"Ancient Egyptian Sentences\"; the JSON object contains several sentences represented by the ID of the sentence = key",
+	"propertyNames": {
+		"minLength": 1
+	},
+	"patternProperties": {
+		"": {
+			"type": "object",
+			"description": "an Ancient Egyptian sentence; the key is the sentence ID; metadata are stored in the properties; the token array contains the word forms",
+            "properties": {
+            	"text": {
+            		"type": "string",
+            		"description": "ID of the text containing this sentence"
+            		},
+            	"owner": {
+            		"type": "string",
+            		"description": "editor of the text"
+            		},
+            	"corpus": {
+            		"type": "string",
+            		"description": "subcorpus of Egyptian texts, e.g. \"sawlit\" for literary texts or \"bbawbriefe\" for letters"
+            		},
+            	"date": {
+            		"type": "string",
+            		"description": "date of the text"
+            		},
+            	"findspot": {
+            		"type": "string",
+            		"description": "findspot of the text"
+            		},
+            	"sentence_translation": {
+            		"type": "string",
+            		"description": "translation of the sentence, translated by the editor"
+            		},
+            	"token": {
+            		"type": "array",
+            		"description": "array of the tokens of the sentence, containing word tokens and destruction markers",
+            		"items": {
+            			"type": "object",
+            			"description": "a token of the sentence; with several properties, e.g. part of speech or hieroglyphic writing",
+            			"properties": {
+            				"_id": {
+            					"type": "string",
+            					"description": "ID of the token"
+            				},
+            				"written_form": {
+            					"type": "string",
+            					"description": "Egyptological transcription of the word in Unicode"
+            				},
+            				"mdc": {
+            					"type": "string",
+            					"description": "Egyptological transcription of the word in MdC"
+            				},
+            				"lineCount": {
+            					"type": "string",
+            					"description": "line count of the word"
+            				},
+            				"lemmaID": {
+            					"type": "string",
+            					"description": "ID of the Egyptian lemma (= lexical entry of the Egyptian word) in the AED (http://simondschweitzer.github.io/aed) to which the word form belongs"
+            				},
+            				"lemma_form": {
+            					"type": "string",
+            					"description": "Egyptological transcription (Unicode) of the Egyptian lemma (= lexical entry of the Egyptian word) in the AED (http://simondschweitzer.github.io/aed) to which the word form belongs"
+            				},
+            				"cotext_translation": {
+            					"type": "string",
+            					"description": "translation of the word form"
+            				},
+            				"zaehler": {
+            					"type": "string",
+            					"description": "counter of the position of the token in the sentence"
+            				},
+            				"hiero": {
+            					"type": "string",
+            					"description": "Hieroglyphic writing of the word form encoded with Gardiner numbers (only if the writing is complete!)"
+            				},
+            				"hiero_unicode": {
+            					"type": "string",
+            					"description": "Hieroglyphic writing of the word form encoded with Unicode (only if the writing is complete!)"
+            				},
+            				"hiero_inventar": {
+            					"type": "string",
+            					"description": "inventar of the hieroglyphs used in the writing of the word form; encoded with Gardiner numbers"
+            				},
+            				"pos": {
+            					"type": "string",
+            					"description": "part of speech of the word form"
+            				},
+            				"name": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is a name"
+            				},
+            				"number": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is a number"
+            				},
+            				"voice": {
+            					"type": "string",
+            					"description": "voice of the word form"
+            				},
+            				"genus": {
+            					"type": "string",
+            					"description": "genus of the word form"
+            				},
+            				"pronoun": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is a pronoun"
+            				},
+            				"numerus": {
+            					"type": "string",
+            					"description": "numerus of the word form"
+            				},
+            				"epitheton": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is an epitheton"
+            				},
+            				"morphology": {
+            					"type": "string",
+            					"description": "encoding of the morphology of the word form"
+            				},
+            				"inflection": {
+            					"type": "string",
+            					"description": "inflection of the word form"
+            				},
+            				"adjective": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is an adjective"
+            				},
+            				"particle": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is a particle"
+            				},
+            				"adverb": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is an adverb"
+            				},
+            				"verbalClass": {
+            					"type": "string",
+            					"description": "subtype of part of speech if the word form is a verb"
+            				},
+            				"status": {
+            					"type": "string",
+            					"description": "status of the word form if the word is an substantive"
+            				}
+            			}
+            		}
+            	}
+            }
+		}
+	}
+}
